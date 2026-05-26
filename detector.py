@@ -74,7 +74,7 @@ def process_packets(packet_queue, alert_callback):
             if ai_verdict[0] == -1:
                 country, country_code = get_country_from_ip(src_ip)
                 
-                # 🎯 මෙතන අපි Type එක "DoS (Denial of Service)" ලෙස කෙලින්ම වෙනස් කළා
+               
                 alert_data = {
                     "time": time.strftime('%Y-%m-%d %H:%M:%S'),
                     "source": src_ip,
