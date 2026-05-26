@@ -42,7 +42,7 @@ def send_telegram_alert(attack_type, source_ip, country):
     except: pass
 
 # 🛡️ FEATURE 1: WINDOWS HOST ACTIVE OS GUARD (PORT-SCANNER TRACKER)
-# සැබෑ වින්ඩෝස් සිස්ටම් එක පසුබිමෙන් පරීක්ෂා කර පෝර්ට් ස්කෑනර්ස් බ්ලොක් කරන ත්‍රෙඩ් එක.
+
 def local_os_port_scanner_guard():
     while True:
         time.sleep(5)
