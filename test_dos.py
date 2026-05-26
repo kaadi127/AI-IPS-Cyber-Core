@@ -5,9 +5,9 @@ import random
 
 TARGET_IP = "127.0.0.1"
 TARGET_PORT = 5000
-PACKET_COUNT = 250  # Threshold එක ඉක්මවා යාමට
+PACKET_COUNT = 250  # Threshold 
 
-# ටෙස්ට් කිරීමට විවිධ රටවල් වල සැබෑ IP ලිපින
+
 FOREIGN_IPS = [
     "8.8.8.8",          # United States
     "1.1.1.1",          # Australia
@@ -22,7 +22,6 @@ def send_packet(spoofed_ip):
         s.settimeout(0.2)
         s.connect((TARGET_IP, TARGET_PORT))
         
-        # HTTP Header එකක් හරහා NIDS එකට බොරු IP එකක් pass කිරීම (HTTP Spoofing Trick)
         custom_header = f"GET / HTTP/1.1\r\nHost: {TARGET_IP}\r\nX-Forwarded-For: {spoofed_ip}\r\n\r\n"
         s.sendall(custom_header.encode())
         s.close()
@@ -30,7 +29,7 @@ def send_packet(spoofed_ip):
         pass
 
 def start_test():
-    # අහඹු ලෙස රටක IP එකක් තෝරා ගැනීම
+   
     chosen_ip = random.choice(FOREIGN_IPS)
     print(f"[*] Simulating Attack via Threat Intelligence...")
     print(f"[*] Selected Target IP: {chosen_ip}")
